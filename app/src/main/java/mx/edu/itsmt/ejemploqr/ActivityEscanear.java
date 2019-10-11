@@ -9,10 +9,14 @@ import android.os.Bundle;
 import com.google.zxing.Result;
 
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
+import mx.edu.itsmt.ejemploqr.controlador.DepartamentoDAO;
+import mx.edu.itsmt.ejemploqr.modelo.Departamento;
 
 public class ActivityEscanear extends AppCompatActivity implements ZXingScannerView.ResultHandler {
 
     private ZXingScannerView escanerZXing;
+    Departamento departamento;
+    DepartamentoDAO departamentoDAO;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +24,8 @@ public class ActivityEscanear extends AppCompatActivity implements ZXingScannerV
         escanerZXing = new ZXingScannerView(this);
         // Hacer que el contenido de la actividad sea el escaner
         setContentView(escanerZXing);
+//        departamento= new Departamento();
+ //       departamentoDAO= new DepartamentoDAO();
     }
     @Override
     public void onResume() {
@@ -42,9 +48,19 @@ public class ActivityEscanear extends AppCompatActivity implements ZXingScannerV
         // Obener código/texto leído
         String codigo = resultado.getText();
         // Preparar un Intent para regresar datos a la actividad que nos llamó
-        Intent intentRegreso = new Intent();
-        intentRegreso.putExtra("codigo", codigo);
-        setResult(Activity.RESULT_OK, intentRegreso);
+      //////////////
+        switch (codigo){
+            case "Jefatura ISC":
+                Intent intentRegreso = new Intent(ActivityEscanear.this,ContenidoActivity.class);
+                intentRegreso.putExtra("codigo", codigo);
+             //   intentRegreso.putExtra("depto", departamento);
+                startActivity(intentRegreso);
+                break;
+        }
+        //////////
+      ///  Intent intentRegreso = new Intent();
+     //   intentRegreso.putExtra("codigo", codigo);
+    //    setResult(Activity.RESULT_OK, intentRegreso);
         // Cerrar la actividad. Ahora mira onActivityResult de MainActivity
         finish();
     }

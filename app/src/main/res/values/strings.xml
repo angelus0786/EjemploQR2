@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">EjemploQR</string>
     <string name="error_camara">Error</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nombre_jefe">Nombre de Jefe</string>
+    <string name="nombre_adscripcion">Adscripcion</string>
+    <string name="tv_horario">Horario</string>
+    <string name="tv_ubicacion">Ubicacion</string>
+    <string name="tv_telefono">telefono</string>
+    <string name="tv_correo">correo</string>
 </resources>
