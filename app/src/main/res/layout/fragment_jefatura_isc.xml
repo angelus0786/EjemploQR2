@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbarAlwaysDrawVerticalTrack="true"
+    tools:context=".fragmentos.JefaturaISCFragment">
+
+  <LinearLayout
+      android:id="@+id/linear1"
+      android:orientation="vertical"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+      <ImageView
+          android:id="@+id/logo"
+          android:layout_width="272dp"
+          android:layout_height="match_parent"
+          android:layout_gravity="center_horizontal"
+          android:background="@drawable/isc"></ImageView>
+
+      <LinearLayout
+          android:id="@+id/linear2"
+          android:orientation="vertical"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+          <TextView
+              style="@style/Tv_jefaturas1"
+              android:id="@+id/nombre_jefe"
+              android:text="@string/nombre_jefe"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+          </TextView>
+
+          <TextView
+              android:id="@+id/tv_nombre_jefe"
+              style="@style/Tv_jefaturas2"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="@string/nombre_jefe">
+
+          </TextView>
+          <TextView
+              style="@style/Tv_jefaturas1"
+              android:id="@+id/nombre_adscripcion"
+              android:text="@string/nombre_adscripcion"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+          </TextView>
+          <TextView
+              style="@style/Tv_jefaturas2"
+              android:id="@+id/tv_nombre_adscripcion"
+              android:text="@string/nombre_adscripcion"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+          </TextView>
+          <TextView
+              style="@style/Tv_jefaturas1"
+              android:id="@+id/horario"
+              android:text="@string/tv_horario"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+          </TextView>
+          <TextView
+              style="@style/Tv_jefaturas2"
+              android:id="@+id/tv_horario"
+              android:text="@string/tv_horario"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+          </TextView>
+          <TextView
+              style="@style/Tv_jefaturas1"
+              android:id="@+id/ubicacion"
+              android:text="@string/tv_ubicacion"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+          </TextView>
+          <TextView
+              style="@style/Tv_jefaturas2"
+              android:id="@+id/tv_ubicacion"
+              android:text="@string/tv_ubicacion"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+          </TextView>
+          <TextView
+              style="@style/Tv_jefaturas1"
+              android:id="@+id/telefono"
+              android:text="@string/tv_telefono"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+          </TextView>
+          <TextView
+              style="@style/Tv_jefaturas2"
+              android:id="@+id/tv_telefono"
+              android:text="@string/tv_telefono"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+          </TextView>
+          <TextView
+              style="@style/Tv_jefaturas1"
+              android:id="@+id/correo"
+              android:text="@string/tv_correo"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+          </TextView>
+          <TextView
+              style="@style/Tv_jefaturas2"
+              android:id="@+id/tv_correo"
+              android:text="@string/tv_correo"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+          </TextView>
+      </LinearLayout>
+
+  </LinearLayout>
+
+</FrameLayout>
+</ScrollView>
