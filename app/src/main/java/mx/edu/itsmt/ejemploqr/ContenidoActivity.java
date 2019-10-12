@@ -23,12 +23,25 @@ public class ContenidoActivity extends AppCompatActivity {
       fragment = new JefaturaISCFragment();
 
         Bundle intent = getIntent().getExtras();
-       // String codigo  = intent.getString("codigo");
+        String codigo  = intent.getString("codigo");
         fragment.setArguments(intent);
         FragmentManager miManejador = getFragmentManager();
         FragmentTransaction miTransaction = miManejador.beginTransaction();
 
         miTransaction.replace(R.id.contenedor,fragment);
         miTransaction.commit();
+       /* switch (codigo){
+            case "Jefatura ISC":
+
+                break;
+            case "Jefatura IMT":
+                miTransaction.replace(R.id.contenedor,fragment);
+                miTransaction.commit();
+                break;
+
+        }
+         */
+       // miTransaction.replace(R.id.contenedor,fragment);
+       // miTransaction.commit();
     }
 }

@@ -16,7 +16,8 @@ public class ActivityEscanear extends AppCompatActivity implements ZXingScannerV
 
     private ZXingScannerView escanerZXing;
     Departamento departamento;
-    DepartamentoDAO departamentoDAO;
+
+    Intent intentRegreso;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,14 +50,28 @@ public class ActivityEscanear extends AppCompatActivity implements ZXingScannerV
         String codigo = resultado.getText();
         // Preparar un Intent para regresar datos a la actividad que nos llamó
       //////////////
-        switch (codigo){
-            case "Jefatura ISC":
-                Intent intentRegreso = new Intent(ActivityEscanear.this,ContenidoActivity.class);
+      //  switch (codigo){
+       //     case "Jefatura ISC":
+                intentRegreso = new Intent(ActivityEscanear.this,ContenidoActivity.class);
                 intentRegreso.putExtra("codigo", codigo);
              //   intentRegreso.putExtra("depto", departamento);
                 startActivity(intentRegreso);
-                break;
-        }
+             //   break;
+          ////  case "Jefatura IMT":
+         ////       intentRegreso = new Intent(ActivityEscanear.this,ContenidoActivity.class);
+            //    intentRegreso.putExtra("codigo", codigo);
+                //   intentRegreso.putExtra("depto", departamento);
+              //  startActivity(intentRegreso);
+          ////      break;
+       ////     case "Jefatura IIA":
+        ////        intentRegreso = new Intent(ActivityEscanear.this,ContenidoActivity.class);
+
+                //   intentRegreso.putExtra("depto", departamento);
+              //  startActivity(intentRegreso);
+       ///         break;
+     ///   }
+     //   intentRegreso.putExtra("codigo", codigo);
+       // startActivity(intentRegreso);
         //////////
       ///  Intent intentRegreso = new Intent();
      //   intentRegreso.putExtra("codigo", codigo);
