@@ -1,5 +1,6 @@
 package mx.edu.itsmt.ejemploqr;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 
@@ -7,6 +8,7 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.view.MenuItem;
 
 import mx.edu.itsmt.ejemploqr.fragmentos.JefaturaISCFragment;
 import mx.edu.itsmt.ejemploqr.modelo.Departamento;
@@ -15,6 +17,7 @@ public class ContenidoActivity extends AppCompatActivity {
 
     Fragment fragment;
     Departamento departamento;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,18 +33,8 @@ public class ContenidoActivity extends AppCompatActivity {
 
         miTransaction.replace(R.id.contenedor,fragment);
         miTransaction.commit();
-       /* switch (codigo){
-            case "Jefatura ISC":
 
-                break;
-            case "Jefatura IMT":
-                miTransaction.replace(R.id.contenedor,fragment);
-                miTransaction.commit();
-                break;
+        getSupportActionBar().setTitle("ITSMT - "+codigo);
 
-        }
-         */
-       // miTransaction.replace(R.id.contenedor,fragment);
-       // miTransaction.commit();
     }
 }

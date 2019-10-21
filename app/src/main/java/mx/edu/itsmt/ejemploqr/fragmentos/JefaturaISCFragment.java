@@ -9,7 +9,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import mx.edu.itsmt.ejemploqr.R;
@@ -22,11 +24,12 @@ import mx.edu.itsmt.ejemploqr.modelo.Departamento;
  */
 public class JefaturaISCFragment extends Fragment {
 
-    TextView nombrejefe,adscripcion, horario,telefono,correo,ubicacion;
+     TextView nombrejefe,adscripcion, horario,telefono,correo,ubicacion;
+     ImageView logotipo;
      Departamento departamento;
-
      MyDatabase myDatabase;
      String codigo;
+     String carrera="isc";
     public JefaturaISCFragment() {
         // Required empty public constructor
     }
@@ -36,6 +39,7 @@ public class JefaturaISCFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View vista = inflater.inflate(R.layout.fragment_jefatura_isc, container, false);
+        logotipo = vista.findViewById(R.id.logo);
         nombrejefe = vista.findViewById(R.id.tv_nombre_jefe);
         adscripcion=vista.findViewById(R.id.tv_nombre_adscripcion);
         horario=vista.findViewById(R.id.tv_horario);
@@ -47,11 +51,37 @@ public class JefaturaISCFragment extends Fragment {
         codigo = getArguments().getString("codigo");
         departamento = myDatabase.getDepartamento(codigo);
 
-        getDatos();
+        getDatos(vista);
         return vista;
+
     }
 
-    public  void getDatos() {
+    public  void getDatos(View view) {
+            if (departamento.getLogo()!=null){
+                carrera = departamento.getLogo().toString();
+            }else{
+                carrera="tec";
+            }
+            switch (carrera) {
+                case "isc":
+                    logotipo.setImageResource(R.drawable.isc);
+                    break;
+                case "imt":
+                    logotipo.setImageResource(R.drawable.imt);
+                    break;
+                case "iia":
+                    logotipo.setImageResource(R.drawable.iia);
+                    break;
+                case "ia":
+                    logotipo.setImageResource(R.drawable.ia);
+                    break;
+                case "ige":
+                    logotipo.setImageResource(R.drawable.ige);
+                    break;
+                case "tec":
+                    logotipo.setImageResource(R.drawable.tec);
+                    break;
+            }
 
         nombrejefe.setText(departamento.getGrado()+departamento.getNombre()+" "+departamento.getApellidos());
         adscripcion.setText(departamento.getAdscripcion());

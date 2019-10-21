@@ -17,8 +17,8 @@ public class DepartamentoDAO {
     public Departamento getDepartamento(String clave) {
 
         SQLiteDatabase db = myDatabase.getReadableDatabase();
-        String sql="select DISTINCT A.grado,A.nombre,A.apellidos,A.correo,A.telefono,B.Adscripción,C.horario,C.ubicacion from Persona A,trabajador B,Departamentos C " +
-                " where C.nombre_depto like '"+clave+ "' and A.id=B.id_persona AND B.id_persona=C.id_jefe ;";
+        String sql="select DISTINCT A.grado,A.nombre,A.apellidos,A.correo,A.telefono,B.Adscripción,C.horario,C.ubicacion,D.logo from Persona A,trabajador B,Departamentos C,Carrera D " +
+                " where C.nombre_depto like '"+clave+ "' and A.id=B.id_persona AND B.id_persona=C.id_jefe AND C.id_jefe=D.id_jefe ;";
         Cursor c = db.rawQuery(sql,null);
 
         while (c.moveToNext()){
@@ -28,6 +28,7 @@ public class DepartamentoDAO {
             departamento.setTelefono(c.getString(4));
             departamento.setAdscripcion(c.getString(5));
             departamento.setUbicacion(c.getString(6));
+            departamento.setLogo(c.getString(8));
         }
        myDatabase.close();
         return departamento;

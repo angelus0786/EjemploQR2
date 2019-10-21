@@ -25,8 +25,7 @@ public class ActivityEscanear extends AppCompatActivity implements ZXingScannerV
         escanerZXing = new ZXingScannerView(this);
         // Hacer que el contenido de la actividad sea el escaner
         setContentView(escanerZXing);
-//        departamento= new Departamento();
- //       departamentoDAO= new DepartamentoDAO();
+
     }
     @Override
     public void onResume() {
